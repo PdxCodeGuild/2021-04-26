@@ -25,16 +25,16 @@ print(cards)
 # tally score of cards
 score = []
 for card in cards:
-        if card.isdigit() == False:
-            if card == 'A':
-                if 21 - sum(score) < 11:
-                    score.append(1)
-                else:
-                    score.append(11)
+    if card.isdigit() == False:
+        if card == 'A':
+            if 21 - sum(score) < 11:
+                score.append(1)
             else:
-                score.append(10)
+                score.append(11)
         else:
-            score.append(int(card))
+            score.append(10)
+    else:
+        score.append(int(card))
 print(score)
 
 score = sum(score)
@@ -42,7 +42,7 @@ score = sum(score)
 message = ''
 if score < 17:
     message = 'Hit!'
-elif 17 >= score < 21:
+elif 17 <= score < 21:
     message = 'Stay!'
 elif score == 21:
     message = 'Blackjack!'
